@@ -5,6 +5,6 @@ export const routes = Router();
 
 routes.post(
    "/cidades",
-   CidadesController.middlewareCreateBodyValidator,
+   CidadesController.middlewareValidations,
    CidadesController.create
 );
