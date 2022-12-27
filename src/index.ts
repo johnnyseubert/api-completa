@@ -1,8 +1,7 @@
-import { config } from "dotenv";
+import "dotenv/config";
 import { server } from "./server/server";
-config();
 
-const port = process.env.SERVER_PORT || 4444;
+const port = process.env.PORT || 4444;
 
 server.listen(port, () => {
    console.log(`Server is running... ${port}`);
