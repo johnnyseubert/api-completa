@@ -3,4 +3,8 @@ import { CidadesController } from "../controllers";
 
 export const routes = Router();
 
-routes.post("/cidades", CidadesController.create);
+routes.post(
+   "/cidades",
+   CidadesController.middlewareCreateBodyValidator,
+   CidadesController.create
+);
