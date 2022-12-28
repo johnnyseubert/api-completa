@@ -17,6 +17,6 @@ describe("Cidades - Create", () => {
       });
 
       expect(res2.statusCode).toBe(StatusCodes.BAD_REQUEST);
-      expect(res2.body).toHaveProperty("body.nome");
+      expect(res2.body).toHaveProperty("errors.body.nome");
    });
 });
