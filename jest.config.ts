@@ -6,7 +6,7 @@ export default {
    coverageReporters: ["json"],
 
    //setup do jest
-   setupFilesAfterEnv: ["./jest.setup.ts"],
+   setupFilesAfterEnv: ["./tests/jest.setup.ts"],
 
    //Config para dizer onde fica os arquivos de teste, sempre dentro da pasta tests
    testMatch: ["<rootDir>/tests/**/*.test.ts"],
