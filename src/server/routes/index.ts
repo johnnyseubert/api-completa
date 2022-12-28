@@ -3,8 +3,14 @@ import { CidadesController } from "../controllers";
 
 export const routes = Router();
 
+routes.get(
+   "/cidades",
+   CidadesController.getAllValidation,
+   CidadesController.getAll
+);
+
 routes.post(
    "/cidades",
-   CidadesController.middlewareValidations,
+   CidadesController.createValidation,
    CidadesController.create
 );
