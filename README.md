@@ -15,3 +15,4 @@
 -  `typescript` => para rodar com typescript
 
 -  `ts-node-dev` => para ter o servidor rodando e atualizando automaticamente como nodemon só que com typescript
+

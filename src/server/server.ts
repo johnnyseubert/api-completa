@@ -7,3 +7,4 @@ export const server = express();
 server.use(cors());
 server.use(express.json());
 server.use("/api/v1", routes);
+

@@ -14,3 +14,4 @@ routes.post(
    CidadesController.createValidation,
    CidadesController.create
 );
+

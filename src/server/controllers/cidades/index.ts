@@ -5,3 +5,4 @@ export const CidadesController = {
    ...create,
    ...getAll,
 };
+
