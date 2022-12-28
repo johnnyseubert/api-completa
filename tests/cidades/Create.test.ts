@@ -2,7 +2,7 @@ import { StatusCodes } from "http-status-codes";
 import { testeServer } from "../jest.setup";
 
 describe("Cidades - Create", () => {
-   it("deve ser possivel criar uma nova cidade", async () => {
+   it("Deve ser possivel criar uma nova cidade", async () => {
       const res = await testeServer.post("/cidades").send({
          nome: "Blumenau",
       });
@@ -10,7 +10,7 @@ describe("Cidades - Create", () => {
       expect(typeof res.body).toBe("number");
    });
 
-   it("não deve ser possivel criar uma cidade com nome menor que 3 caracteres", async () => {
+   it("Não deve ser possivel criar uma cidade com nome menor que 3 caracteres", async () => {
       const res = await testeServer.post("/cidades").send({
          nome: "Bl",
       });
@@ -18,13 +18,13 @@ describe("Cidades - Create", () => {
       expect(res.body).toHaveProperty("errors.body.nome");
    });
 
-   it("não deve ser possivel criar uma cidade sem informar o nome", async () => {
+   it("Não deve ser possivel criar uma cidade sem informar o nome", async () => {
       const res = await testeServer.post("/cidades").send({});
       expect(res.statusCode).toBe(StatusCodes.BAD_REQUEST);
       expect(res.body).toHaveProperty("errors.body.nome");
    });
 
-   it("não deve ser possivel criar uma cidade informando um numero no nome", async () => {
+   it("Não deve ser possivel criar uma cidade informando um numero no nome", async () => {
       const res = await testeServer.post("/cidades").send({ nome: 1 });
       expect(res.statusCode).toBe(StatusCodes.BAD_REQUEST);
       expect(res.body).toHaveProperty("errors.body.nome");

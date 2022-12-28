@@ -16,6 +16,13 @@ export const deleteByIdValidation = validation((getSchema) => ({
 }));
 
 export const deleteById = async (req: Request<IParamProps>, res: Response) => {
-   console.log(req.params);
-   return res.status(StatusCodes.INTERNAL_SERVER_ERROR).send("Não implentado!");
+   if (Number(req.params.id) === 9999) {
+      return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+         errros: {
+            default: "Registro não encontrado",
+         },
+      });
+   }
+
+   return res.status(StatusCodes.NO_CONTENT).send();
 };

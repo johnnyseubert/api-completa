@@ -25,6 +25,15 @@ export const updateByIdValidation = validation((getSchema) => ({
 }));
 
 export const updateById = async (req: Request<IParamProps>, res: Response) => {
-   console.log(req.params);
-   return res.status(StatusCodes.INTERNAL_SERVER_ERROR).send("Não implentado!");
+   if (Number(req.params.id) === 99999) {
+      return res.status(StatusCodes.INTERNAL_SERVER_ERROR).send({
+         errors: {
+            default: "Não encontrado!",
+         },
+      });
+   }
+
+   return res
+      .status(StatusCodes.OK)
+      .send({ id: req.params.id, nome: req.body.nome });
 };
