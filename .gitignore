@@ -4,4 +4,4 @@
 /build
 yarn-error
 /coverage
-database.sqlite
+*.sqlite
