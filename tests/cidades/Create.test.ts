@@ -6,8 +6,9 @@ describe("Cidades - Create", () => {
       const res = await testeServer.post("/cidades").send({
          nome: "Blumenau",
       });
+
       expect(res.statusCode).toBe(StatusCodes.CREATED);
-      expect(typeof res.body).toBe("number");
+      expect(typeof res.body.id).toBe("number");
    });
 
    it("Não deve ser possivel criar uma cidade com nome menor que 3 caracteres", async () => {

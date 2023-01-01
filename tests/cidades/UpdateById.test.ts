@@ -1,14 +1,14 @@
 import { StatusCodes } from "http-status-codes";
 import { testeServer } from "../jest.setup";
 
-describe("Cidades - GetById", () => {
+describe("Cidades - UpdateById", () => {
    it("Deve ser possivel atualizar o registro pelo id", async () => {
       const criar = await testeServer
          .post(`/cidades`)
          .send({ nome: "Blumenau" });
 
       const atualizar = await testeServer
-         .put(`/cidades/${criar.body}`)
+         .put(`/cidades/${criar.body.id}`)
          .send({ nome: "Itajai" });
 
       expect(atualizar.statusCode).toEqual(StatusCodes.OK);

@@ -6,7 +6,9 @@ describe("Cidades - DeleteById", () => {
       const res = await testeServer.post("/cidades").send({ nome: "Blumenau" });
       expect(res.statusCode).toBe(StatusCodes.CREATED);
 
-      const resDelete = await testeServer.delete(`/cidades/${res.body}`).send();
+      const resDelete = await testeServer
+         .delete(`/cidades/${res.body.id}`)
+         .send();
       expect(resDelete.statusCode).toBe(StatusCodes.NO_CONTENT);
    });
 

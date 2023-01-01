@@ -7,7 +7,7 @@ describe("Cidades - GetById", () => {
          .post(`/cidades`)
          .send({ nome: "Blumenau" });
 
-      const res = await testeServer.get(`/cidades/${criar.body}`).send();
+      const res = await testeServer.get(`/cidades/${criar.body.id}`).send();
       expect(res.statusCode).toEqual(StatusCodes.OK);
       expect(res.body).toHaveProperty("nome");
    });
